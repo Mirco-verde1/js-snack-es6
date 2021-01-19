@@ -7,58 +7,7 @@
 
 
 
-
-
-
-function randomNumber(min, max) {
-  var result = Math.floor(Math.random() * (max + 1 - min) + min); // funzione per generare dei numeri randomici
-  return result;
-}
-
-
-var teamList = [                                         // Array di oggetti
-  {nome: 'Ajax', punti: 0, falliSubiti:0},
-
-  {nome: 'Barcellona', punti: 0, falliSubiti:0},
-
-  {nome: 'Livepool', punti: 0, falliSubiti:0},
-
-  {nome: 'Lille', punti: 0, falliSubiti:0},
-];
-
-
-var nameAndFoulTeam = [];   //variabile che uso successivamente per stampare solo i punti e i nomi delle squadre
-
-
-
-
-for (var i = 0; i < teamList.length; i++) {            //ciclo la lista squadre e aggiungo un valore random per punti e falliSubiti
-
-  var newteamList = teamList[i];
-  newteamList.punti = randomNumber(1  , 20);
-  newteamList.falliSubiti = randomNumber(1  , 20);
-
-};
-console.log(teamList);
-
-
-
-for (var i = 0; i < teamList.length; i++) {
-  nameAndFoulTeam.push(teamList[i].nome)
-  nameAndFoulTeam.push(teamList[i].falliSubiti)
-
-}
-console.log(nameAndFoulTeam);
-
-
-
-
 //
-
-
-
-// LO SCRIPT VIENE PASSATO INTERAMENTE A ECMASCRIPT 6
-
 //
 //
 // function randomNumber(min, max) {
@@ -67,7 +16,7 @@ console.log(nameAndFoulTeam);
 // }
 //
 //
-// const teamList = [                                         // Array di oggetti
+// var teamList = [                                         // Array di oggetti
 //   {nome: 'Ajax', punti: 0, falliSubiti:0},
 //
 //   {nome: 'Barcellona', punti: 0, falliSubiti:0},
@@ -78,15 +27,14 @@ console.log(nameAndFoulTeam);
 // ];
 //
 //
-//
-// const nameAndFoulTeam = [];   //costante che uso successivamente per stampare solo i punti e i nomi delle squadre
-//
+// var nameAndFoulTeam = [];   //variabile che uso successivamente per stampare solo i punti e i nomi delle squadre
 //
 //
 //
-// for (let i = 0; i < teamList.length; i++) {            //ciclo la lista squadre e aggiungo un valore random per punti e falliSubiti
 //
-//   let newteamList = teamList[i];
+// for (var i = 0; i < teamList.length; i++) {            //ciclo la lista squadre e aggiungo un valore random per punti e falliSubiti
+//
+//   var newteamList = teamList[i];
 //   newteamList.punti = randomNumber(1  , 20);
 //   newteamList.falliSubiti = randomNumber(1  , 20);
 //
@@ -101,3 +49,56 @@ console.log(nameAndFoulTeam);
 //
 // }
 // console.log(nameAndFoulTeam);
+//
+//
+//
+
+//
+
+
+
+// LO SCRIPT VIENE PASSATO INTERAMENTE A ECMASCRIPT 6
+
+
+
+function randomNumber(min, max) {
+  var result = Math.floor(Math.random() * (max + 1 - min) + min); // funzione per generare dei numeri randomici
+  return result;
+}
+
+
+const teamList = [                                         // Array di oggetti
+  {nome: 'Ajax', punti: 0, falliSubiti:0},
+
+  {nome: 'Barcellona', punti: 0, falliSubiti:0},
+
+  {nome: 'Livepool', punti: 0, falliSubiti:0},
+
+  {nome: 'Lille', punti: 0, falliSubiti:0},
+];
+
+
+
+const nameAndFoulTeam = [];   //costante che uso successivamente per stampare solo i punti e i nomi delle squadre
+
+
+
+
+for (let i = 0; i < teamList.length; i++) {            //ciclo la lista squadre e aggiungo un valore random per punti e falliSubiti
+
+  let newteamList = teamList[i];
+  newteamList.punti = randomNumber(1  , 20);
+  newteamList.falliSubiti = randomNumber(1  , 20);
+
+};
+console.log(teamList);
+
+
+
+for (let i = 0; i < teamList.length; i++) {         // creo un nuovo array dove verranno inserite nome e falli subiti dalla squadra
+let secondList = teamList[i];
+const { nome , falliSubiti} = secondList;           //Estrapolo da secondList i valori che mi interessano
+
+nameAndFoulTeam.push(nome ,falliSubiti);            //Diventano argomenti dell' array nameAndFoulTeam;
+}
+console.log(nameAndFoulTeam);                        //stampo il risultato nel console.log
