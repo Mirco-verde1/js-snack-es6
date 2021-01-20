@@ -33,7 +33,8 @@
 //
 //
 //
-//-------------------------------------------------------- QUESTA SECONDA PARTE VIENE SCRITTA IN JS 6 -------------------------------------------->>>>>>
+// -------------------------------------------------------- QUESTA SECONDA PARTE VIENE SCRITTA IN JS 6 -------------------------------------------->>>>>>
+// ------------------------------------------------------------------- PRIMA PARTE HO USATO UN FILTER ------------------------------------------------->>>>>>
 
 
 const min = parseInt(prompt('Inserisci un numero minimo'));
@@ -41,14 +42,44 @@ const max = parseInt(prompt('Inserisci un numero massimo'));
 const nameList = ['Maria', 'Giuliano', 'Mariano', 'Bettina', 'Marco', 'Miriam'];
 
 //CREO LA FUNZIONE CHE STAMPI I NOMI COMPRESI TRA I NUMERI INSERITI MIN E MAX
+// VERSIONE CON FUNZIONE 'FILTER'
 
 function myFunction(array ,min ,max){
+
   let newList = [];
 
     newList = array.filter((elem , index) => {
     return index => min && index <= max
   })
+
    return newList;
 }
 
 console.log(myFunction(nameList, min, max));
+
+// ------------------------------------------------------------------ SECONDA PARTE HO USATO UN FOR EACH -------------------------------------------->>>>>>
+
+
+const numMin = parseInt(prompt('Inserisci un numero minimo'));
+const numMax = parseInt(prompt('Inserisci un numero massimo'));
+const casualName = ['Maria', 'Giuliano', 'Mariano', 'Bettina', 'Marco', 'Miriam'];
+
+//CREO LA FUNZIONE CHE STAMPI I NOMI COMPRESI TRA I NUMERI INSERITI MIN E MAX
+// VERSIONE CON FUNZIONE 'FOR EACH'
+function myFunction(array ,numMin ,numMax){
+
+  let newList = [];
+
+   array.forEach((item, i) => {
+
+    if (i => numMin && i <= numMax) {
+
+      newList.push(item)
+    }
+})
+    return newList;
+
+  };
+
+
+console.log(myFunction(casualName, numMin, numMax));
