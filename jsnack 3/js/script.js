@@ -49,7 +49,7 @@ function myFunction(array ,min ,max){
   let newList = [];
 
     newList = array.filter((elem , index) => {
-    return index => min && index <= max
+    return index >= min && index <= max
   })
 
    return newList;
@@ -72,7 +72,7 @@ function myFunction(array ,numMin ,numMax){
 
    array.forEach((item, i) => {
 
-    if (i => numMin && i <= numMax) {
+    if (i >= numMin && i <= numMax) {
 
       newList.push(item)
     }
